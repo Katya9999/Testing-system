@@ -12,16 +12,26 @@ public class Main {
                     String password = scanner.next();
                     if (Authentication.authenticateUser(password)) {
                         //вся работа аутентифицированного юзера проводится здесь
-                        System.out.println("Вы вошли в систему как " + Authentication.getFile().getName());
+                        System.out.println("Вы вошли в систему как " + Authentication.getFile().getName().split("\\.")[0]);
                         if (Authentication.getFile().getName().equals("Administrator")){
-                            //вызов администратора(его интерфейса)
+                            while(true) {
+                                System.out.println();
+                                break;
+                                //вызов администратора(его интерфейса)
+                            }
 
                         }else{
-                            //вызов студента(его интерфейса)
+                            while(true) {
+                                System.out.println();
+                                //вызов студента(его интерфейса)
+                                break;
+                            }
                         }
                     } else {
                         System.out.println("Введен неправильный пароль");
                     }
+                    //для того чтоб после работы выйти на стадию аутентификации
+                    break;
                 }
             }else{
                 System.out.println("Вы не зарегистрированы. Введите логин: ");
