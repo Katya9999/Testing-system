@@ -3,8 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
-//TODO: не менее одного вопроса в тесте, не менее двух вариантов ответа на вопрос
-
 public class TestBuilder {
     private String testName;
     private HashMap<Question, HashSet<Answer>> map = new LinkedHashMap<>();
@@ -34,8 +32,7 @@ public class TestBuilder {
         if (TestSet.testNameSet.contains(testName)){
             this.testName = testName;
             File file = new File(dir.getPath() + "/" + testName + ".txt");
-            try {
-                Scanner scanner = new Scanner(file);
+            try(Scanner scanner = new Scanner(file)) {
                 String s;
                 Question quest = null;
                 Answer answer;
@@ -66,8 +63,7 @@ public class TestBuilder {
     public void downloadCorrectAnswers(String testName){
         if (TestSet.testNameSet.contains(testName)){
             File file = new File(dirResponses.getPath() + "/" + testName);
-            try {
-                Scanner scanner = new Scanner(file);
+            try(Scanner scanner = new Scanner(file)) {
                 String s;
                 Question quest = null;
                 Answer answer = null;
