@@ -55,11 +55,14 @@ public class Student implements StudentCommands {
                     answer = answer + ")";
 
                 HashMap<Question, Answer> answerHashMap = test.getCorrectAnswerMap();
-                if(answerHashMap.get(m.getKey()).getAnswer().contains(answer)){
-                    System.out.println("правильно");
-                    points++;
-                }else{
-                    System.out.println("не правильно");
+                while(true) {
+                    if (answerHashMap.get(m.getKey()).getAnswer().contains(answer)) {
+                        points++;
+                        break;
+                    } else if(!m.getValue().contains(new Answer(answer))){
+                        System.out.println("Ответ не найден. Попробуйте снова");
+                        answer = scanner.next();
+                    }
                 }
             }
             this.studentRate.createRatingFileIfIsNotExist(testName);

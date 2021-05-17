@@ -13,6 +13,14 @@ public class Test {
         this.correctAnswerMap = testBuilder.getCorrectAnswerMap();
     }
 
+    public HashMap<Question, Answer> getCorrectAnswerMap() {
+        return correctAnswerMap;
+    }
+
+    public HashMap<Question, HashSet<Answer>> getMap() {
+        return map;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

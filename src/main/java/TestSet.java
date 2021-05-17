@@ -1,10 +1,17 @@
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 
-//д/б метод подгружающий тесты(через сканирование папки Tests с тестами)
-//методы для подгрузки тестов и имен тестов следует вынести в служебный класс
+
 public class TestSet {
     public static HashSet<Test> testSet = new HashSet<>();
     public static HashSet<String> testNameSet = new HashSet<>();
+    public static HashMap<Integer, String> testNames = new HashMap<>();
 
+    public static void listTest(){
+        for(Map.Entry<Integer, String> m: testNames.entrySet()){
+            System.out.println(m.getKey() + " " + m.getValue());
+        }
+    }
 }

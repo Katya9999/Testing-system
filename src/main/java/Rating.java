@@ -34,11 +34,6 @@ public class Rating {
     }
 
     public void calculateRate(int pointsForTest, int numberOfQuestions){
-        //>90% - эт 5
-        //>65% и <=90% -4
-        //>50% и <=65% -3
-        //<50% - 2
-
         double percent =(double) pointsForTest/numberOfQuestions * 100;
         if(percent > 90){
             currentRate = 5;
@@ -61,6 +56,7 @@ public class Rating {
                     try {
                         int previousRate = scanner.nextInt();
                         System.out.println("Ваша предыдущая оценка: " + previousRate);
+                        System.out.println("Введите команду");
                         if (previousRate < currentRate) {
                             try (PrintWriter printWriter = new PrintWriter(dir + "/" + login + "_" + testName + ".txt")) {
                                 printWriter.println(currentRate);
@@ -80,6 +76,7 @@ public class Rating {
                     e.printStackTrace();
                 }
             }
+
         }
     }
 }
