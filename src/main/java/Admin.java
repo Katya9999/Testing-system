@@ -91,11 +91,12 @@ public class Admin implements AdminCommands {
                 System.out.println(answer.getAnswer());
             }
             System.out.println("Введите правильный вариант ответа(латинскими буквами): ");
+            boolean flag =true;
+
             String answer = scanner.next();
             if (!answer.contains(")"))
                 answer = answer + ")";
 
-            boolean flag =true;
             while(flag) {
                 for (Answer a : testBuilder.getMap().get(question)) {
                     if (a.getAnswer().contains(answer)) {
@@ -113,13 +114,14 @@ public class Admin implements AdminCommands {
             for(Answer answer: m.getValue()){
                 System.out.println(answer.getAnswer());
             }
-            System.out.println("Введите правильный вариант ответа(латинскими буквами): ");
-            String answer = scanner.next();
-            if (!answer.contains(")"))
-                answer = answer + ")";
 
             boolean flag =true;
             while(flag) {
+                System.out.println("Введите правильный вариант ответа(латинскими буквами): ");
+                String answer = scanner.next();
+                if (!answer.contains(")"))
+                    answer = answer + ")";
+
                 for (Answer a : m.getValue()) {
                     if (a.getAnswer().contains(answer)) {
                         correctAnswerMap.put(m.getKey(), a);
