@@ -8,7 +8,7 @@ public class TestBuilder {
     private String testName;
     private HashMap<Question, HashSet<Answer>> map = new LinkedHashMap<>();
     private HashMap<Question, Answer> correctAnswerMap = new LinkedHashMap<>();
-    private static final File dir = new File("src/main/resources/Tests");
+    private static final File dir = new File("./Tests");
 
     public void setMap(HashMap<Question, HashSet<Answer>> map) {
         this.map = map;
@@ -18,7 +18,7 @@ public class TestBuilder {
         this.correctAnswerMap = correctAnswerMap;
     }
 
-    private static final File dirResponses = new File("src/main/resources/Tests/Test responses");
+    private static final File dirResponses = new File("./Tests/Test responses");
 
     public void setTestName(String testName) {
         this.testName = testName;
@@ -51,7 +51,7 @@ public class TestBuilder {
                 item.delete();
             }
         }
-        File path = new File("src/main/resources/Ratings");
+        File path = new File("./Ratings");
         for (File item: Objects.requireNonNull(path.listFiles())){
             if(item.getName().contains(testName)) {
                 item.delete();

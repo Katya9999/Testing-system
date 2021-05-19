@@ -4,8 +4,8 @@ import java.util.*;
 public class Admin implements AdminCommands {
     private HashMap<Integer, String> students;
 
-    private static final File dirCreds = new File("src/main/resources/Credentials");
-    private static final File dirRatings = new File("src/main/resources/Ratings");
+    private static final File dirCreds = new File("./Credentials");
+    private static final File dirRatings = new File("./Ratings");
 
     public Admin() {
 

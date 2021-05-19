@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Rating {
     private String login;
-    private static final File dir = new File("src/main/resources/Ratings");
+    private static final File dir = new File("./Ratings");
     private int currentRate;
 
     public File getDir(){
@@ -26,7 +26,7 @@ public class Rating {
     public void createRatingFileIfIsNotExist(String testName){
         try {
             if(Arrays.stream(Objects.requireNonNull(dir.listFiles())).noneMatch(x-> x.getName().contains(login + "_" + testName))) {
-                Files.createFile(Path.of("src/main/resources/Ratings/" + login + "_" + testName + ".txt"));
+                Files.createFile(Path.of("./Ratings/" + login + "_" + testName + ".txt"));
             }
         } catch (IOException e) {
             e.printStackTrace();

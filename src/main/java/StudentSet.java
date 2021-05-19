@@ -7,7 +7,7 @@ public class StudentSet {
     private HashSet<Student> studentHashSet;
     private HashMap<String, String> creds;
 
-    private static final File dirCreds = new File("src/main/resources/Credentials");
+    private static final File dirCreds = new File("./Credentials");
 
     StudentSet(){
         downloadStudentCreds();

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Registration {
-    private static final File dirCreds = new File("src/main/resources/Credentials");
+    private static final File dirCreds = new File("./Credentials");
     private static File currentFile;
 
     public static File getFile() {
@@ -37,8 +37,8 @@ public class Registration {
 
     public static void register(String login, String password){
         try {
-            Files.createFile(Path.of("src/main/resources/Credentials/" + login + ".txt"));
-            Files.writeString(Path.of("src/main/resources/Credentials/" + login + ".txt"), "login: " + login + "\n" + "password: " + password);
+            Files.createFile(Path.of("./Credentials/" + login + ".txt"));
+            Files.writeString(Path.of("./Credentials/" + login + ".txt"), "login: " + login + "\n" + "password: " + password);
         } catch (IOException e) {
             e.printStackTrace();
         }
